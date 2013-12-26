@@ -1,11 +1,11 @@
 var querystring = require('querystring');
 
-var koa = require('koa');
+var koa    = require('koa');
 var route  = require('koa-route');
 
 var chatwork = require('./lib/chatwork');
 var client   = chatwork(process.env.CHATWORK_API_TOKEN);
-var PORT = process.env.PORT || 5000;
+var PORT     = process.env.PORT || 5000;
 
 var app = koa();
 
