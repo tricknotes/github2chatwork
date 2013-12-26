@@ -1,8 +1,10 @@
-var https = require('https');
 var querystring = require('querystring');
 
 var koa = require('koa');
 var route  = require('koa-route');
+
+var chatwork = require('./lib/chatwork');
+var client   = chatwork(process.env.CHATWORK_API_TOKEN);
 
 var app = koa();
 
@@ -14,10 +16,11 @@ app.use(route.post('/chatwork/:room_id', function *(room_id) {
   });
 
   this.req.on('end', function() {
-    var params  = querystring.decode(body);
-    var payload = JSON.parse(params.payload);
+    var params   = querystring.decode(body);
+    var payload  = JSON.parse(params.payload);
+    var endpoint = 'rooms/' + room_id + '/messages';
 
-    console.log(payload);
+    client.post(endpoint , {body: payload.compare});
   });
 
   this.body = 'OK';
