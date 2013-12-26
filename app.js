@@ -23,7 +23,7 @@ app.use(route.post('/chatwork/:room_id', function *(room_id) {
     var message = [
       '(bot)',
       '@' + payload.pusher.name + 'さんが push しました:',
-      '* ' + payload.compare
+      '> ' + payload.compare
     ].join('\n');
 
     client.post(endpoint , {body: message});
