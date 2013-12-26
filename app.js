@@ -5,6 +5,7 @@ var route  = require('koa-route');
 
 var chatwork = require('./lib/chatwork');
 var client   = chatwork(process.env.CHATWORK_API_TOKEN);
+var PORT = process.env.PORT || 5000;
 
 var app = koa();
 
@@ -31,4 +32,4 @@ app.use(route.post('/chatwork/:room_id', function *(room_id) {
   this.body = 'OK';
 }));
 
-app.listen(5000);
+app.listen(PORT);
