@@ -19,8 +19,13 @@ app.use(route.post('/chatwork/:room_id', function *(room_id) {
     var params   = querystring.decode(body);
     var payload  = JSON.parse(params.payload);
     var endpoint = 'rooms/' + room_id + '/messages';
+    var message = [
+      '(bot)',
+      '@' + payload.pusher.name + 'さんが push しました:',
+      '* ' + payload.compare
+    ].join('\n');
 
-    client.post(endpoint , {body: payload.compare});
+    client.post(endpoint , {body: message});
   });
 
   this.body = 'OK';
