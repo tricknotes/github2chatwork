@@ -1,0 +1,19 @@
+{
+  "name": "chartworks",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryunosuke SATO <tricknotes.rs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "~> 0.1.2",
+    "koa-route": "~1.0.2"
+  }
+}
