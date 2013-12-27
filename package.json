@@ -10,8 +10,9 @@
   "author": "Ryunosuke SATO <tricknotes.rs@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "koa": "~> 0.1.2",
-    "koa-route": "~1.0.2"
+    "koa": "~0.1.2",
+    "koa-route": "~1.0.2",
+    "co-body": "~0.0.1"
   },
   "engines": {
     "node": ">= 0.11.9"
