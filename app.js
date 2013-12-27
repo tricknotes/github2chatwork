@@ -11,7 +11,7 @@ var PORT     = process.env.PORT || 5000;
 var app = koa();
 
 app.use(route.post('/chatwork/:room_id', function *(room_id) {
-  var params   = yield parse(this.req);
+  var params   = yield parse(this);
   var payload  = JSON.parse(params.payload);
   var endpoint = 'rooms/' + room_id + '/messages';
   var message  = [
